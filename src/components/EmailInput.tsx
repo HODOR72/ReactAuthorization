@@ -1,13 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
-import {
-	getData,
-	setEditEmail,
-	setEmail,
-	setValidEmail,
-} from '../redux/slices/dataSlice'
+import { getData, setEditEmail, setEmail, setValidEmail} from '../redux/slices/dataSlice'
 import Invalid from '../assets/img/invalid.svg'
 
-const EmailInput = ({ edit }: any) => {
+export const EmailInput: React.FC<{ edit: boolean }> = ({ edit }) => {
 	const dispatch = useDispatch()
 	const { email, validEmail, editEmail } = useSelector(getData)
 
@@ -26,7 +21,7 @@ const EmailInput = ({ edit }: any) => {
 			<label className={!validEmail ? 'label-invalid' : ''}>Email Adress</label>
 			{edit && (
 				<label
-					className='hide-ui'
+					className={`hide-ui ${editEmail ? 'hide-ui-acitve' : ''}`}
 					onClick={() => dispatch(setEditEmail(!editEmail))}
 				>
 					<p className='link'>Edit</p>
@@ -35,10 +30,8 @@ const EmailInput = ({ edit }: any) => {
 			<div
 				className={`unvalid-text ${!validEmail ? 'unvalid-text-active' : ''}`}
 			>
-				<img src={Invalid} alt='' /> Введите адрес электронной почты
+				<img src={Invalid} alt='' /> Enter your email address
 			</div>
 		</span>
 	)
 }
-
-export default EmailInput

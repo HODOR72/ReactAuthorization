@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 
 interface dataSliceState {
@@ -8,22 +8,24 @@ interface dataSliceState {
 	password: string
 	hidePassword: boolean
 	validPasswordTypes: boolean[]
+	openSnakBar: boolean
 }
 
 const initialState: dataSliceState = {
-	email: '',
+	email: localStorage.getItem('Email') || '',
 	validEmail: true,
 	editEmail: true,
-	password: '',
+	password: localStorage.getItem('Password') || '',
 	hidePassword: true,
 	validPasswordTypes: [false, false, false, false],
+	openSnakBar: false,
 }
 
 export const dataSlice = createSlice({
 	name: 'counter',
 	initialState,
 	reducers: {
-		setEmail(state, action) {
+		setEmail(state, action: PayloadAction<string>) {
 			state.email = action.payload
 		},
 		setValidEmail(state, action) {
@@ -35,16 +37,16 @@ export const dataSlice = createSlice({
 				? true
 				: false
 		},
-		setEditEmail(state, action) {
+		setEditEmail(state, action: PayloadAction<boolean>) {
 			state.editEmail = action.payload
 		},
-		setPassword(state, action) {
+		setPassword(state, action: PayloadAction<string>) {
 			state.password = action.payload
 		},
-		setHidePassword(state, action) {
+		setHidePassword(state, action: PayloadAction<boolean>) {
 			state.hidePassword = action.payload
 		},
-		setValidPasswordTypes(state, action) {
+		setValidPasswordTypes(state, action: PayloadAction<string>) {
 			let arrValidPassword = []
 
 			if (action.payload.length >= 8) arrValidPassword.push(true)
@@ -60,6 +62,10 @@ export const dataSlice = createSlice({
 			else arrValidPassword.push(false)
 			state.validPasswordTypes = arrValidPassword
 		},
+		reset: () => initialState,
+		setOpenSnackBar(state, action: PayloadAction<boolean>) {
+			state.openSnakBar = action.payload
+		},
 	},
 })
 
@@ -70,6 +76,8 @@ export const {
 	setPassword,
 	setHidePassword,
 	setValidPasswordTypes,
+	reset,
+	setOpenSnackBar,
 } = dataSlice.actions
 export const getData = (state: RootState) => state.dataSliceReducer
 

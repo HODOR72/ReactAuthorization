@@ -6,12 +6,11 @@ import {
 	setValidPasswordTypes,
 } from '../redux/slices/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
-
 import HidePass from '../assets/img/hidePass.svg'
 import Circle from '../assets/img/circle.svg'
 import CircleConfirmed from '../assets/img/circle-confirmed.svg'
 
-const PasswordInput = () => {
+export const PasswordInput: React.FC = () => {
 	const dispatch = useDispatch()
 	const { password, hidePassword, validPasswordTypes } = useSelector(getData)
 
@@ -30,7 +29,7 @@ const PasswordInput = () => {
 				autoComplete='on'
 			/>
 			<label>Password</label>
-			<label className='hide-ui'>
+			<label className={`hide-ui ${hidePassword ? 'hide-ui-acitve' : ''}`}>
 				<img
 					src={HidePass}
 					alt=''
@@ -75,5 +74,3 @@ const PasswordInput = () => {
 		</span>
 	)
 }
-
-export default PasswordInput

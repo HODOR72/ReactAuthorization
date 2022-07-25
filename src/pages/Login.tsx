@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { EmailInput, PasswordInput, Button } from '../components'
-
+import { Button, EmailInput, PasswordInput } from '../components'
 export const Login: React.FC = () => {
 	return (
 		<>
@@ -9,8 +8,7 @@ export const Login: React.FC = () => {
 			<form action='#'>
 				<EmailInput edit />
 				<PasswordInput />
-				<span className='link'>Forgot password?</span>
-				<Button />
+				<Button type='login' />
 			</form>
 			<p className='text'>
 				Don’t have an account?

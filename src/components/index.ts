@@ -1,3 +1,4 @@
-export { default as Button } from './Button'
-export { default as EmailInput } from './EmailInput'
-export { default as PasswordInput } from './PasswordInput'
+export { Button } from './Button'
+export { EmailInput } from './EmailInput'
+export { PasswordInput } from './PasswordInput'
+export { SnackBar } from './SnackBar'
