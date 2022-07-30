@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ReactAuthorization/static/css/main.4b35c333.css",
-    "main.js": "/ReactAuthorization/static/js/main.11deed14.js",
+    "main.js": "/ReactAuthorization/static/js/main.705bcea3.js",
     "static/media/invalid.svg": "/ReactAuthorization/static/media/invalid.d9af4d6e65ba77a404c9a084d0fd8fdd.svg",
     "static/media/Google.svg": "/ReactAuthorization/static/media/Google.c8b05cc53e17d35502ae1031b68791ed.svg",
     "static/media/circle-confirmed.svg": "/ReactAuthorization/static/media/circle-confirmed.db1e903042eb47ea0db38cc593eea58b.svg",
@@ -9,10 +9,10 @@
     "static/media/hidePass.svg": "/ReactAuthorization/static/media/hidePass.c8a3d1a020099fc3a4fa9b581ee3aab1.svg",
     "static/media/circle.svg": "/ReactAuthorization/static/media/circle.89a21e25f855143b2ea6f82e7dc4809f.svg",
     "main.4b35c333.css.map": "/ReactAuthorization/static/css/main.4b35c333.css.map",
-    "main.11deed14.js.map": "/ReactAuthorization/static/js/main.11deed14.js.map"
+    "main.705bcea3.js.map": "/ReactAuthorization/static/js/main.705bcea3.js.map"
   },
   "entrypoints": [
     "static/css/main.4b35c333.css",
-    "static/js/main.11deed14.js"
+    "static/js/main.705bcea3.js"
   ]
 }
