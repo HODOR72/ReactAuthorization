@@ -6,7 +6,6 @@ import { EmailInput } from '../components'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import Google from '../assets/img/Google.svg'
 
-
 export const Home: React.FC = () => {
 	const { email, validEmail } = useSelector(getData)
 	const dispatch = useDispatch()
@@ -23,7 +22,6 @@ export const Home: React.FC = () => {
 				navigate('/account')
 			})
 			.catch(error => {
-				alert('Произошла ошибка')
 				console.log(error)
 			})
 	}
